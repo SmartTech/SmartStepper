@@ -56,8 +56,9 @@ class SmartStepper {
 
     uint32_t microsCnt = 0;
 
-    bool  resetSteps = true;
-    bool  reverse    = false;
+    bool  resetSteps     = true;
+    bool  reverse        = false;
+	bool  commonPower    = false;
     
     int   stepsPerRotate = 0;  
     int   currentStep    = 0;       // Which step the motor is on

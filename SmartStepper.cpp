@@ -301,31 +301,63 @@ void SmartStepper::stepPin(uint8_t pin, uint32_t value)
  **********************************************************/
 void SmartStepper::stepMotor(int thisStep)
 {
-  switch (thisStep) {
-    case 0:  // 1010
-      stepPin(motor_pin_1, power);
-      stepPin(motor_pin_2, LOW);
-      stepPin(motor_pin_3, power);
-      stepPin(motor_pin_4, LOW);
-    break;
-    case 1:  // 0110
-      stepPin(motor_pin_1, LOW);
-      stepPin(motor_pin_2, power);
-      stepPin(motor_pin_3, power);
-      stepPin(motor_pin_4, LOW);
-    break;
-    case 2:  //0101
-      stepPin(motor_pin_1, LOW);
-      stepPin(motor_pin_2, power);
-      stepPin(motor_pin_3, LOW);
-      stepPin(motor_pin_4, power);
-    break;
-    case 3:  //1001
-      stepPin(motor_pin_1, power);
-      stepPin(motor_pin_2, LOW);
-      stepPin(motor_pin_3, LOW);
-      stepPin(motor_pin_4, power);
-    break;
+  if(commonPower)
+  {
+	  switch (thisStep) {
+		case 0:  // 1010
+		  stepPin(motor_pin_1, power);
+		  stepPin(motor_pin_2, LOW);
+		  stepPin(motor_pin_3, power);
+		  stepPin(motor_pin_4, LOW);
+		break;
+		case 1:  // 0110
+		  stepPin(motor_pin_1, LOW);
+		  stepPin(motor_pin_2, power);
+		  stepPin(motor_pin_3, power);
+		  stepPin(motor_pin_4, LOW);
+		break;
+		case 2:  //0101
+		  stepPin(motor_pin_1, LOW);
+		  stepPin(motor_pin_2, power);
+		  stepPin(motor_pin_3, LOW);
+		  stepPin(motor_pin_4, power);
+		break;
+		case 3:  //1001
+		  stepPin(motor_pin_1, power);
+		  stepPin(motor_pin_2, LOW);
+		  stepPin(motor_pin_3, LOW);
+		  stepPin(motor_pin_4, power);
+		break;
+	  }
+  }
+  else
+  {
+	  switch (thisStep) {
+		case 0:  // 1010
+		  stepPin(motor_pin_1, power);
+		  stepPin(motor_pin_2, LOW);
+		  stepPin(motor_pin_3, power);
+		  stepPin(motor_pin_4, LOW);
+		break;
+		case 1:  // 0110
+		  stepPin(motor_pin_1, LOW);
+		  stepPin(motor_pin_2, power);
+		  stepPin(motor_pin_3, power);
+		  stepPin(motor_pin_4, LOW);
+		break;
+		case 2:  //0101
+		  stepPin(motor_pin_1, LOW);
+		  stepPin(motor_pin_2, power);
+		  stepPin(motor_pin_3, LOW);
+		  stepPin(motor_pin_4, power);
+		break;
+		case 3:  //1001
+		  stepPin(motor_pin_1, power);
+		  stepPin(motor_pin_2, LOW);
+		  stepPin(motor_pin_3, LOW);
+		  stepPin(motor_pin_4, power);
+		break;
+	  }
   }
 }
 
